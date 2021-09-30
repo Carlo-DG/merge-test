@@ -1,0 +1,44 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  creationTimestamp: '2021-09-24T07:24:51Z'
+  generation: 2
+  managedFields:
+    - apiVersion: tekton.dev/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:params': {}
+          'f:resources': {}
+          'f:tasks': {}
+      manager: Mozilla
+      operation: Update
+      time: '2021-09-27T16:31:13Z'
+  name: git-merge-test
+  namespace: jn-cicd-core
+  resourceVersion: '64490136'
+  selfLink: /apis/tekton.dev/v1beta1/namespaces/jn-cicd-core/pipelines/git-merge-test
+  uid: eef33a43-11fe-49d4-b653-e6f2ff9538ab
+spec:
+  tasks:
+    - name: git-merge-test
+      params:
+        - name: SOURCE_BRANCH
+          value: test
+        - name: DEST_BRANCH
+          value: main
+        - name: REPOSITORY
+          value: merge-test
+        - name: URL_REPOSITORY
+          value: >-
+            https://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@github.com/Carlo-DG/merge-test.git
+        - name: GIT_USER_NAME
+          value: Carlo-DG
+        - name: GIT_USER_EMAIL
+          value: carlo.dg@hotmail.com
+        - name: TOKEN
+          value: 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
+      taskRef:
+        kind: Task
+        name: git-merge-test
